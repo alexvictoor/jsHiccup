@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "outDir": "./",
+        "declaration": true,
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "module": "commonjs",
+        "target": "es5",
+        "typeRoots" : ["./node_modules/@types"],
+        "lib": [
+            "webworker", "es2016"
+        ],
+        "types": [
+            "node"
+        ]
+    },
+    
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "jshiccup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/jshiccup.client.js",
+  "types": "./dist/HiccupRecorder.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "prepublish": "webpack",
+    "prettier": "prettier --parser typescript -l src/**/*.ts",
+    "prettier:fix": "prettier --write --parser typescript -l src/**/*.ts"
+  },
+  "author": "Alexandre Victoor",
+  "license": "BSD",
+  "devDependencies": {
+    "@types/node": "7.0.0",
+    "prettier": "^1.6.1",
+    "typescript": "^2.5.3",
+    "ts-loader": "^2.3.2",
+    "webpack": "^1.13.3"
+  },
+  "dependencies": {
+    "base64-js": "^1.2.0",
+    "hdr-histogram-js": "^1.0.0",
+    "pako": "^1.0.3"
+  }
+}
