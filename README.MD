@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alexvictoor/jsHiccup.svg?branch=master)](https://travis-ci.org/alexvictoor/jsHiccup)
+
 # jsHiccup
 Working on a complex UI which sometimes freeze?  
 jsHiccup might be handy.  
