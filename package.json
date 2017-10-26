@@ -1,7 +1,7 @@
 {
-  "name": "jshiccup",
+  "name": "jsHiccup",
   "version": "1.0.0",
-  "description": "",
+  "description": "JavaScript version of jHiccup running in a browser with a web worker",
   "main": "./dist/jshiccup.client.js",
   "types": "./dist/HiccupRecorder.d.ts",
   "scripts": {
