@@ -2,7 +2,7 @@ var webpack = require('webpack'),
     path = require('path'),
     yargs = require('yargs');
 
-var libraryName = 'jshiccup',
+var libraryName = 'jsHiccup',
     plugins = [],
     outputFile,
     entryFile;
