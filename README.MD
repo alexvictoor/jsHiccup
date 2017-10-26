@@ -4,6 +4,8 @@
 Working on a complex UI which sometimes freeze?  
 jsHiccup might be handy.  
 This is a proof of concept aiming to reproduce within a browser what [jHiccup](https://github.com/giltene/jHiccup) provides inside a JVM. 
+Go check out this [live demo](https://alexvictoor.github.io/jsHiccup/) and then generate hiccup graphs with [HdrHistogram log analyzer](https://hdrhistogram.github.io/HdrHistogramJSDemo/logparser.html)
+
 ## Description 
 Just like jHiccup, jsHiccup runs a loop and keeps track of the delay between two turns. If the delay is bigger than usual the system, the JavaScript runtime, might have freeze. All the delay are stored in an histogram which is serialized at fixed interval in a log, leveraging on [HdrHistogram](https://github.com/HdrHistogram/HdrHistogramJS). Since HdrHistogram operations might increase the load of your UI, all the costly treatments are done by an HTML5 web worker.
 ## Usage
