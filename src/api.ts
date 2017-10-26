@@ -1,23 +1,26 @@
 interface StartHiccupRecorderEvent {
-    type: "start";
-    resolutionMs: number;
-    reportingIntervalMs: number;
+  type: "start";
+  resolutionMs: number;
+  reportingIntervalMs: number;
 }
 
 interface RecordHiccupEvent {
-    type: "record";
-    deltaTimeMicrosec: number;
+  type: "record";
+  deltaTimeMicrosec: number;
 }
 
 interface StopHiccupRecorderEvent {
-    type: "stop";
+  type: "stop";
 }
 
-type Event = StartHiccupRecorderEvent | RecordHiccupEvent | StopHiccupRecorderEvent;
+type Event =
+  | StartHiccupRecorderEvent
+  | RecordHiccupEvent
+  | StopHiccupRecorderEvent;
 
 export {
-    StartHiccupRecorderEvent,
-    RecordHiccupEvent,
-    StopHiccupRecorderEvent,
-    Event
-}
+  StartHiccupRecorderEvent,
+  RecordHiccupEvent,
+  StopHiccupRecorderEvent,
+  Event
+};
