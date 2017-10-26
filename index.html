@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+  <!--
+
+      What you might be looking is at the end of the file
+
+  -->
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JsHiccup Demo</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="./bootstrap.theme.css" />
+</head>
+
+<body>
+
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">JsHiccup</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="active"><a href="https://github.com/alexvictoor/jsHiccup">Documentation</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover">
+                <h1 class="cover-heading">jsHiccup Demo</h1>
+                <p class="lead">Track the pauses of your browser UI</p>    
+            </div>
+
+            <button class="btn btn-default" onclick="freeze()">Freeze your browser 1sec!</button>
+            <button class="btn btn-default" onclick="downloadLog()">Download HDR log file</button>
+        
+        </div>
+    </div>
+ </div>
+
+
+
+    <script src="jshiccup.recorder.js"></script>
+    <script>
+        const worker = new Worker("jshiccup.worker.js");
+        let buffer = "";
+        const logAppender = (line) => buffer += (line + "\r\n"); 
+        const recorder = new jsHiccup.default(worker, logAppender, 100, 5000);
+        
+        recorder.start();
+
+        function freeze() {
+            const begin = new Date().getTime();
+            let i = 0
+            while ((new Date().getTime() - begin) < 1234) {
+                i++;
+            }
+            console.log("pause", i);
+        }
+
+        function downloadLog() {
+            download("jSHiccup" + new Date().getTime() + ".log", buffer);
+        }
+
+        function download(filename, text) {
+            const pom = document.createElement('a');
+            pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            pom.setAttribute('download', filename);
+
+            if (document.createEvent) {
+                const event = document.createEvent('MouseEvents');
+                event.initEvent('click', true, true);
+                pom.dispatchEvent(event);
+            }
+            else {
+                pom.click();
+            }
+        }
+
+    </script>
+
+    
+
+    </div>
+</body>
+
+</html>
