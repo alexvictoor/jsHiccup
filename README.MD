@@ -25,7 +25,7 @@ Using npm you can get these files with the following command:
 Note for TypeScript developers: since jsHiccup has been written in TypeScript, definition files are embedded, no additional task is needed to get them.   
 js files are also available from github's release page:
 ```
-<script src="https://github.com/alexvictoor/releases/download/v1.0.0/jshiccup.recorder.js" />
+<script src="https://alexvictoor.github.io/jsHiccup/jshiccup.recorder.js" />
 ```
 Once you have grabbed the two scripts, you can start instrumenting your application with the following code fragment:
 ```
