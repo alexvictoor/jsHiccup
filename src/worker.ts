@@ -1,8 +1,3 @@
-// make sure pako is loaded in the webworker
-declare function require(name: string): any;
-//require("pako");
-//require("base64-js");
-
 import { Recorder, HistogramLogWriter } from "hdr-histogram-js";
 import {
   Event,
@@ -19,6 +14,9 @@ let histogram = recorder.getIntervalHistogram();
 const handleStart = (event: StartHiccupRecorderEvent) => {
   const writer = new HistogramLogWriter(postMessage.bind(self));
   writer.outputLogFormatVersion();
+  writer.outputComment("jsHiccup v1.0");
+  writer.outputComment("Timestamp and interval length are in seconds");
+  writer.outputComment("Hiccup measures, including max, are in ms");
   writer.outputLegend();
   recorder.reset();
   resolutionMicrosec = event.resolutionMs * 1000;
