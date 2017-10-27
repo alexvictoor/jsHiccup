@@ -1,5 +1,5 @@
 {
-  "name": "jsHiccup",
+  "name": "jshiccup",
   "version": "1.0.0",
   "description": "JavaScript version of jHiccup running in a browser with a web worker",
   "main": "./dist/jshiccup.client.js",

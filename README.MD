@@ -20,7 +20,7 @@ or as a TypeScript module.
 Both files can be downloaded directly or using npm/yarn.  
 Using npm you can get these files with the following command:
 ```
-  npm i jsHiccup
+  npm i jshiccup
 ```
 Note for TypeScript developers: since jsHiccup has been written in TypeScript, definition files are embedded, no additional task is needed to get them.   
 js files are also available from github's release page:
