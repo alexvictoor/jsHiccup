@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/alexvictoor/jsHiccup.svg?branch=master)](https://travis-ci.org/alexvictoor/jsHiccup)
 
 # jsHiccup
-Working on a complex UI which sometimes freeze?  
-jsHiccup might be handy.  
+Working on a complex UI which sometimes freeze? jsHiccup might be handy!  
 This is a proof of concept aiming to reproduce within a browser what [jHiccup](https://github.com/giltene/jHiccup) provides inside a JVM. 
 Go check out this [live demo](https://alexvictoor.github.io/jsHiccup/) and then generate hiccup graphs with [HdrHistogram log analyzer](https://hdrhistogram.github.io/HdrHistogramJSDemo/logparser.html)  
 *Note: jsHiccup measures are in micro seconds when displayed in the log analyzer UI*
